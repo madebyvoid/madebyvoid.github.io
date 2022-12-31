@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+          $('textarea').change(function() {
+            var inputValue = $(this).val();
+            $.cookie('textarea-contents', inputValue); /* stores the textarea contents in a cookie */
+          });
+      
+          var savedText = $.cookie('textarea-contents'); /* retrieves the textarea contents from the cookie */
+          if (savedText) {
+            $('textarea').val(savedText); /* sets the textarea contents to the saved value */
+          }
+        });
+      </script>
+    <textarea type="text" id="input" size="50" aria-rowcount="50" spellcheck="false">
+</body>
+</html>
