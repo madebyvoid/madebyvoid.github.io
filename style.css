@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(209, 224, 255);    
+    background-color: #202020;    
     /* color: white; */
     /* background: linear-gradient(to right, #4ac29a, #bdfff3); */
     background-attachment: fixed;
@@ -17,17 +17,37 @@ textarea[type="text"]{
 }
 textarea{
     height: 750px;
-    width: 750px;
+    width: 1000px;
     resize: none;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     border: 0;
     border-radius: 25px;
     padding: 25px 25px;
-    font-size: 25px;
+    font-size: 17px;
     font-family: Segoe UI;
     font-weight: 600;
+    color: rgb(255, 168, 6);
+    display: all;
 }
 textarea:focus{
-    outline: none;
-    box-shadow: 10px 15px 0px 10px rgba(159, 191, 255, 0.5);
+    outline: rgb(255, 168, 6) solid 5px;
 }   
+.minres{
+    left: 25%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50% -50%);
+    font-size: 50px;
+    font-weight: 600;
+    font-family: Segoe UI;
+    color: rgb(255, 168, 6);
+    display: none;
+}
+@media (max-width: 1080px) {
+    .minres{
+        display: initial;
+    }
+    textarea{
+        display: none;
+    }
+}
