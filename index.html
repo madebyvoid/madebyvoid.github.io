@@ -13,16 +13,21 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-          $('textarea').change(function() {
-            var inputValue = $(this).val();
-            $.cookie('textarea-contents', inputValue); /* stores the textarea contents in a cookie */
-          });
-      
-          var savedText = $.cookie('textarea-contents'); /* retrieves the textarea contents from the cookie */
-          if (savedText) {
-            $('textarea').val(savedText); /* sets the textarea contents to the saved value */
-          }
-        });
+  // Bind a change event to the textarea
+  $('textarea').change(function() {
+    // Save the contents of the textarea to a cookie when it is changed
+    var inputValue = $(this).val();
+    $.cookie('textarea-contents', inputValue);
+  });
+
+  // Check for the presence of a cookie containing the saved contents of the textarea
+  var savedText = $.cookie('textarea-contents');
+
+  // If the cookie exists, set the value of the textarea to the saved contents
+  if (savedText) {
+    $('textarea').val(savedText);
+  }
+});
       </script>
     <textarea type="text" id="input" size="50" aria-rowcount="50" spellcheck="false">
 </body>
