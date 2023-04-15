@@ -30,7 +30,7 @@ textarea{
     display: all;
 }
 textarea:focus{
-    outline: rgb(255, 168, 6) solid 5px;
+    outline: rgb(0,191,255) solid 4px;
 }   
 .minres{
     left: 25%;
